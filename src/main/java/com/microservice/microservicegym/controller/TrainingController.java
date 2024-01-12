@@ -17,9 +17,10 @@ public class TrainingController {
     @Autowired
     TrainingService trainingService;
 
-    @PostMapping
-    public TrainingWorkloadResponseDTO getWorkload() {
-        return new TrainingWorkloadResponseDTO(trainingService.selectTrainerTrainings("George.Ford", null, null, null, null));
+    @PostMapping("/{username}")
+    public TrainingWorkloadResponseDTO getWorkload(@PathVariable("username") String username) {
+        return new TrainingWorkloadResponseDTO(trainingService.selectTrainerTrainings(username, null, null, null, null));
+
     }
 
     @DeleteMapping("/{id}")

@@ -62,4 +62,12 @@ public class TrainingWorkloadResponseDTO {
     public void setSummary(Map<Integer, Map<Integer, String>> summary) {
         this.summary = summary;
     }
+
+    @Override
+    public String toString() {
+        return "TrainingWorkloadResponseDTO{" +
+                "trainer=" + trainer +
+                ", summary=" + summary +
+                '}';
+    }
 }
