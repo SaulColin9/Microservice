@@ -1,6 +1,7 @@
 package com.microservice.microservicegym.controller;
 
 import com.microservice.microservicegym.controller.dto.DeleteTrainingRequestDTO;
+import com.microservice.microservicegym.controller.dto.DeleteTrainingResponseDTO;
 import com.microservice.microservicegym.controller.dto.TrainingWorkloadResponseDTO;
 import com.microservice.microservicegym.model.Training;
 import com.microservice.microservicegym.service.TrainingService;
@@ -21,10 +22,10 @@ public class TrainingController {
         return new TrainingWorkloadResponseDTO(trainingService.selectTrainerTrainings("George.Ford", null, null, null, null));
     }
 
-    @DeleteMapping
-    public ResponseEntity<String> deleteTraining(@RequestBody DeleteTrainingRequestDTO req) {
-        trainingService.deleteTraining(req.id());
-        return ResponseEntity.ok("OK");
+    @DeleteMapping("/{id}")
+    public DeleteTrainingResponseDTO deleteTraining(@PathVariable("id") int id) {
+        Training training = trainingService.deleteTraining(id);
+        return new DeleteTrainingResponseDTO("OK", training);
     }
 
 
