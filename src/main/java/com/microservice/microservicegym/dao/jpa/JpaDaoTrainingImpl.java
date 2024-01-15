@@ -1,7 +1,6 @@
 package com.microservice.microservicegym.dao.jpa;
 
 import com.microservice.microservicegym.model.Training;
-import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
