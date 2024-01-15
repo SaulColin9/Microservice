@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.web.servlet.handler.MappedInterceptor;
 
@@ -12,7 +13,9 @@ import org.springframework.web.servlet.handler.MappedInterceptor;
 public class MicroserviceGymApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MicroserviceGymApplication.class, args);
+        ConfigurableApplicationContext ctx = SpringApplication.run(MicroserviceGymApplication.class, args);
+
+
     }
 
     @Bean

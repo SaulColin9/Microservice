@@ -26,9 +26,9 @@ public class TrainingReceiver {
 
     @JmsListener(destination = "training.create.queue")
     public void trainingWorkloadReceiver(String username) {
-        logger.info(
-                new TrainingWorkloadResponseDTO(trainingService
-                        .selectTrainerTrainings(username, null,
-                                null, null, null)).toString());
+//        logger.info(
+//                new TrainingWorkloadResponseDTO(trainingService
+//                        .selectTrainerTrainings(username, null,
+//                                null, null, null)).toString());
     }
 }

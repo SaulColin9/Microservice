@@ -11,18 +11,17 @@ public class TrainingWorkloadResponseDTO {
     private Trainer trainer;
     private Map<Integer, Map<Integer, String>> summary;
 
-    public TrainingWorkloadResponseDTO(List<Training> trainings) {
-        this.trainer = trainings.get(0).getTrainer();
+    public TrainingWorkloadResponseDTO() {
+    }
+
+    public static Map<Integer, Map<Integer, String>> generateDateSummary(List<Training> trainings) {
         List<LocalDate> dates = new ArrayList<>();
         for (Training training : trainings) {
             Date date = training.getTrainingDate();
             LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             dates.add(localDate);
         }
-        this.summary = generateDateSummary(dates);
-    }
 
-    public static Map<Integer, Map<Integer, String>> generateDateSummary(List<LocalDate> dates) {
         Map<Integer, Map<Integer, Integer>> dateCounter = new HashMap<>();
 
         for (LocalDate date : dates) {
