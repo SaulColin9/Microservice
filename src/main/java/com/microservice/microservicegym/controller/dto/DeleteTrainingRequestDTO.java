@@ -1,4 +1,8 @@
 package com.microservice.microservicegym.controller.dto;
 
-public record DeleteTrainingRequestDTO(int id) {
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record DeleteTrainingRequestDTO(int trainingId) {
+
 }
