@@ -3,6 +3,7 @@ package com.microservice.microservicegym.controller;
 import com.microservice.microservicegym.controller.dto.DeleteTrainingResponseDTO;
 import com.microservice.microservicegym.controller.dto.TrainingWorkloadResponseDTO;
 import com.microservice.microservicegym.model.Training;
+import com.microservice.microservicegym.repository.TrainingWorkloadRepository;
 import com.microservice.microservicegym.service.TrainerService;
 import com.microservice.microservicegym.service.TrainingService;
 import org.springframework.beans.factory.annotation.Autowired;
