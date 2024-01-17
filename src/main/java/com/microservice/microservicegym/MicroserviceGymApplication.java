@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.index.Index;
+//import org.springframework.data.mongodb.core.MongoTemplate;
+//import org.springframework.data.mongodb.core.index.Index;
 import org.springframework.web.servlet.handler.MappedInterceptor;
 
 @SpringBootApplication
@@ -15,11 +15,11 @@ public class MicroserviceGymApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(MicroserviceGymApplication.class, args);
-        MongoTemplate mongoTemplate = ctx.getBean(MongoTemplate.class);
-        mongoTemplate.indexOps("trainingWorkloadResponseDTO")
-                .ensureIndex(
-                        new Index().on("trainer.user.username", Sort.Direction.ASC)
-                );
+//        MongoTemplate mongoTemplate = ctx.getBean(MongoTemplate.class);
+//        mongoTemplate.indexOps("trainingWorkloadResponseDTO")
+//                .ensureIndex(
+//                        new Index().on("trainer.user.username", Sort.Direction.ASC)
+//                );
     }
 
     @Bean

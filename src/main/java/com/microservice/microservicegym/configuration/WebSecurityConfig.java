@@ -28,7 +28,7 @@ public class WebSecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests(registry ->
                         registry
-                                .requestMatchers(HttpMethod.POST, "/training/workload").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/training/workload/**").permitAll()
                                 .anyRequest().authenticated()
                 );
         return http.build();
