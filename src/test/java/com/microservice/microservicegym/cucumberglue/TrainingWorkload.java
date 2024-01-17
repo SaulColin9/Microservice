@@ -3,7 +3,6 @@ package com.microservice.microservicegym.cucumberglue;
 import com.microservice.microservicegym.controller.dto.TrainingWorkloadResponseDTO;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
@@ -12,7 +11,7 @@ import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class CucumberTestSteps {
+public class TrainingWorkload {
     @LocalServerPort
     private String port;
     private ResponseEntity<TrainingWorkloadResponseDTO> lastResponse;
