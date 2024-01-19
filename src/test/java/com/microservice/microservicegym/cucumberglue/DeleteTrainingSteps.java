@@ -28,7 +28,7 @@ public class DeleteTrainingSteps {
         httpHeaders.add("authorization", token);
 
         HttpEntity<String> entity = new HttpEntity<>("body", httpHeaders);
-        lastResponse = new RestTemplate().exchange("http://localhost:" + port + url, HttpMethod.DELETE, entity, DeleteTrainingResponseDTO.class);
+        lastResponse = new RestTemplate().exchange("http://localhost:" + port + url, HttpMethod.POST, entity, DeleteTrainingResponseDTO.class);
     }
 
     @Then("the client receives a status code of {int}")
