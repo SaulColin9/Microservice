@@ -34,7 +34,6 @@ public class TrainingReceiver {
     @JmsListener(destination = "training.delete.queue")
     public void deleteTrainingReceiver(DeleteTrainingRequestDTO req) {
         Training training = trainingService.deleteTraining(req.trainingId());
-
     }
 
     @JmsListener(destination = "training.create.queue")

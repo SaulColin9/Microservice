@@ -11,8 +11,10 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.http.HttpResponse;
 import java.util.List;
 import java.util.Map;
 
@@ -58,8 +60,12 @@ public class TrainingController {
 
     @DeleteMapping("/{id}")
     public DeleteTrainingResponseDTO deleteTraining(@PathVariable("id") int id) {
-        Training training = trainingService.deleteTraining(id);
-        return new DeleteTrainingResponseDTO("OK", training);
+        try {
+            Training training = trainingService.deleteTraining(id);
+            return new DeleteTrainingResponseDTO("OK", training);
+        } catch (NullPointerException e) {
+            return new DeleteTrainingResponseDTO("No training was found", null);
+        }
     }
 
 
