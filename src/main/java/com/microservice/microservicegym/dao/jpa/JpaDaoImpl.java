@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 
 @Service
 public abstract class JpaDaoImpl<T extends EntityModel> implements Dao<T> {
-    @Autowired
+    @Autowired(required = false)
     private EntityManager entityManager;
 
     @Transactional

@@ -19,7 +19,6 @@ public class TrainingWorkload {
     @Autowired
     private String token;
 
-
     @When("the client calls \\/training\\/workload\\/George.Ford")
     public void the_client_calls_training_workload_george_ford() {
         String url = "/training/workload/George.Ford";

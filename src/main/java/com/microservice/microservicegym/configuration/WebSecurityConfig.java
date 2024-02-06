@@ -17,10 +17,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-@PropertySource(value = "classpath:security.properties")
 public class WebSecurityConfig {
-    @Value("${token}")
-    private String permanentToken;
+    private String permanentToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJHZW9yZ2UuRm9yZCIsImV4cCI6ODgxMDU2OTQ3MjksInAiOiJzZWNyZXQifQ.hzIJ0I33gHzW4zAy9UceJe30pj7FT5rMN8OhnCi45gY";
     @Autowired
     JwtAuthenticationFilter jwtAuthenticationFilter;
     @Autowired

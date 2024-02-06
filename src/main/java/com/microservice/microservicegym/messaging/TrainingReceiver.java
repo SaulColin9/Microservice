@@ -31,12 +31,12 @@ public class TrainingReceiver {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    @JmsListener(destination = "training.delete.queue")
+//    @JmsListener(destination = "training.delete.queue")
     public void deleteTrainingReceiver(DeleteTrainingRequestDTO req) {
         Training training = trainingService.deleteTraining(req.trainingId());
     }
 
-    @JmsListener(destination = "training.create.queue")
+//    @JmsListener(destination = "training.create.queue")
     public void trainingWorkloadReceiver(String username) {
         Query query = new Query();
         query.addCriteria(Criteria.where("trainer.user.username").is(username));
