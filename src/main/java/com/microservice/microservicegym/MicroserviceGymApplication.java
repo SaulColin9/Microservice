@@ -21,7 +21,7 @@ import org.springframework.web.servlet.handler.MappedInterceptor;
 
 import java.util.Map;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+@SpringBootApplication
 public class MicroserviceGymApplication {
 
     public static void main(String[] args) {
