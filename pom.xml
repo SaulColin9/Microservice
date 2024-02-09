@@ -63,11 +63,7 @@
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 			<version>3.2.1</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-broker</artifactId>
-			<version>6.0.1</version>
-		</dependency>
+
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
@@ -83,6 +79,19 @@
 			<artifactId>cucumber-spring</artifactId>
 			<version>${cucumber.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-aws-messaging</artifactId>
+			<version>2.2.6.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+			<version>5.3.24</version>
+		</dependency>
+
 
 
 	</dependencies>
